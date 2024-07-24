@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddQuote"
+    android:orientation="vertical"
+    android:padding="25dp"
+    android:background="@color/primary"
+    >
+
+    <TextView
+        android:id="@+id/inputDataTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Input Quote"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:textSize="28sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        />
+    <EditText
+        android:id="@+id/inputQuote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Enter quote"
+        android:layout_marginVertical="15dp"
+        android:padding="15dp"
+        android:background="@drawable/border_radius_shadow"
+        android:textColorHint="@color/placeholder"
+        android:textColor="@color/black"
+        />
+    <EditText
+        android:id="@+id/inputAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Author"
+        android:layout_marginVertical="15dp"
+        android:padding="15dp"
+        android:background="@drawable/border_radius_shadow"
+        android:textColorHint="@color/placeholder"
+        android:textColor="@color/black"
+        />
+    <EditText
+        android:id="@+id/inputCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Category"
+        android:layout_marginVertical="15dp"
+        android:padding="15dp"
+        android:background="@drawable/border_radius_shadow"
+        android:textColorHint="@color/placeholder"
+        android:textColor="@color/black"
+        />
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_gravity="center"
+        android:layout_marginVertical="20dp"
+        android:background="@drawable/border_radius_shadow"
+        android:backgroundTint="@color/secondary"
+        />
+
+
+</LinearLayout>

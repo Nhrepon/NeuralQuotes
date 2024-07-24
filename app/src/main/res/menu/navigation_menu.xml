@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group>
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/home"
+            android:title="Home"
+            android:checkable="true"
+            android:tooltipText="@string/app_name"
+            />
+        <item
+            android:id="@+id/trending"
+            android:icon="@drawable/trending"
+            android:title="Trending"
+            android:checkable="true"
+            />
+
+        <item
+            android:id="@+id/bookmark"
+            android:icon="@drawable/bookmark"
+            android:title="Bookmark"
+            android:checkable="true"
+            />
+
+        <item
+            android:id="@+id/quoteByCategory"
+            android:icon="@drawable/account"
+            android:title="Quote by category"
+            android:checkable="true"
+            />
+
+        <item
+            android:id="@+id/quoteByAuthor"
+            android:icon="@drawable/account"
+            android:title="Quote by Author"
+            android:checkable="true"
+            />
+
+
+
+        <item
+            android:id="@+id/addQuote"
+            android:icon="@drawable/bookmark"
+            android:title="Add quote"
+            android:checkable="true"
+            />
+
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/setting"
+            android:icon="@drawable/home"
+            android:title="Setting"
+            android:checkable="true"
+            />
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/account"
+            android:title="About"
+            android:checkable="true"
+            />
+        <item
+            android:id="@+id/privecy"
+            android:icon="@drawable/account"
+            android:title="Privecy Policy"
+            android:checkable="true"
+            />
+        <item
+            android:id="@+id/term"
+            android:icon="@drawable/account"
+            android:title="Terms and Condition"
+            android:checkable="true"
+            />
+        <item
+            android:id="@+id/otherApp"
+            android:icon="@drawable/account"
+            android:title="Other app"
+            android:checkable="true"
+            />
+    </group>
+</menu>
