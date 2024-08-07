@@ -7,13 +7,22 @@
     android:background="@color/primary"
     >
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/noData"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Bookmark"
-        android:textSize="36sp"
+        android:layout_height="wrap_content"
+        android:text="No bookmark data found"
+        android:textSize="18sp"
         android:gravity="center"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
         />
 
 </FrameLayout>

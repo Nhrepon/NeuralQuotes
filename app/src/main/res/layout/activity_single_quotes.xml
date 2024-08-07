@@ -21,25 +21,27 @@
         android:background="@drawable/women_bg"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="25dp">
+        android:padding="25dp"
+
+        >
 
         <TextView
             android:id="@+id/quoteTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
-            android:background="@drawable/border_radius_shadow"
+            android:background="#34000000"
             android:fontFamily="@font/comic"
             android:paddingHorizontal="20dp"
             android:paddingVertical="9dp"
             android:text="@string/app_name"
-            android:textColor="@color/secondary"
+            android:textColor="@color/white"
             android:textSize="36sp"
 
             />
 
         <TextView
-            android:id="@+id/quoteAuthore"
+            android:id="@+id/quoteAuthor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -59,17 +61,12 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="?attr/actionBarSize"
             android:layout_alignParentBottom="true"
             android:orientation="vertical"
             android:gravity="end"
             android:padding="10dp"
             >
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="?attr/actionBarSize"
-                />
 
         </LinearLayout>
     </RelativeLayout>

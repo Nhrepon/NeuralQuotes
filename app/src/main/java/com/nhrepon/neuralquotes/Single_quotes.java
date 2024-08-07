@@ -11,9 +11,12 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Single_quotes extends AppCompatActivity {
 
-    public static String quoteTitles = "av";
-    public static String quoteAuthores = "ad";
-    TextView quoteTitle, quoteAuthore;
+    public static String quoteTitles = "a";
+    public static String quoteAuthors = "a";
+
+
+
+    TextView quoteTitle, quoteAuthor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +25,10 @@ public class Single_quotes extends AppCompatActivity {
         setContentView(R.layout.activity_single_quotes);
 
         quoteTitle = findViewById(R.id.quoteTitle);
-        quoteAuthore = findViewById(R.id.quoteAuthore);
+        quoteAuthor = findViewById(R.id.quoteAuthor);
 
-        quoteTitle.setText(quoteTitles);
-        quoteAuthore.setText(" - "+quoteAuthores);
+        quoteTitle.setText("“ " + quoteTitles +" ”");
+        quoteAuthor.setText("- "+ quoteAuthors);
 
     }
 }

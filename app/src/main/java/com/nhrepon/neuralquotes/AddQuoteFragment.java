@@ -20,7 +20,7 @@ import android.widget.Toast;
 public class AddQuoteFragment extends Fragment {
 
     TextView inputDataTitle;
-    EditText inputQuote, inputAuthor, inputCategory;
+    EditText inputQuote, inputAuthor, inputCategory, inputImage;
     Button submit;
     FrameLayout frameLayout;
     DatabaseHelper dbHelper;
@@ -39,6 +39,7 @@ public class AddQuoteFragment extends Fragment {
         inputQuote = addQuoteView.findViewById(R.id.inputQuote);
         inputAuthor = addQuoteView.findViewById(R.id.inputAuthor);
         inputCategory = addQuoteView.findViewById(R.id.inputCategory);
+        inputImage = addQuoteView.findViewById(R.id.inputImage);
         submit=addQuoteView.findViewById(R.id.submit);
 
         dbHelper=new DatabaseHelper(getContext());
@@ -49,6 +50,7 @@ public class AddQuoteFragment extends Fragment {
                 String quotes = String.valueOf(inputQuote.getText());
                 String authors = inputAuthor.getText().toString();
                 String categorys = inputCategory.getText().toString();
+                String image = inputImage.getText().toString();
 
                 if(quotes.length() <= 0) {
                     inputQuote.setError("Enter quotes");
@@ -61,7 +63,7 @@ public class AddQuoteFragment extends Fragment {
                     Toast.makeText(getContext(), "Enter category", Toast.LENGTH_SHORT).show();
                 }else {
 
-                    dbHelper.addQuotes(quotes, authors, categorys);
+                    dbHelper.addQuotes(quotes, authors, categorys, image);
                     Toast.makeText(getContext(), "Quote add successful...", Toast.LENGTH_SHORT).show();
 
                     updateUi();

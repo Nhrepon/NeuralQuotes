@@ -1,7 +1,12 @@
 package com.nhrepon.neuralquotes;
 
+import static android.content.Context.CONNECTIVITY_SERVICE;
+import static androidx.core.content.ContextCompat.getSystemService;
+
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +21,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,6 +35,8 @@ ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
 HashMap<String, String> hashMap;
 
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -40,6 +48,8 @@ HashMap<String, String> hashMap;
 
         databaseHelper=new DatabaseHelper(getContext());
 
+
+
         Cursor cursor = databaseHelper.getAllQuote();
         if (cursor != null && cursor.getCount() > 0){
             while (cursor.moveToNext()){
@@ -47,12 +57,14 @@ HashMap<String, String> hashMap;
                 String quote = cursor.getString(1);
                 String author = cursor.getString(2);
                 String category = cursor.getString(3);
+                String image = cursor.getString(4);
 
                 hashMap = new HashMap<>();
                 hashMap.put("id", ""+id);
                 hashMap.put("quote", ""+quote);
                 hashMap.put("author", ""+author);
                 hashMap.put("category", ""+category);
+                hashMap.put("image", ""+image);
                 arrayList.add(hashMap);
             }
         }else {
@@ -78,7 +90,7 @@ HashMap<String, String> hashMap;
         // manual create
         private class recyleViewHolder extends RecyclerView.ViewHolder{
 
-            TextView category, quote, authore;
+            TextView category, quote, author;
 
 
             public recyleViewHolder(@NonNull View itemView) {
@@ -86,7 +98,7 @@ HashMap<String, String> hashMap;
                 quotesItem = itemView.findViewById(R.id.quotesItem);
                 category = itemView.findViewById(R.id.category);
                 quote = itemView.findViewById(R.id.quote);
-                authore = itemView.findViewById(R.id.authore);
+                author = itemView.findViewById(R.id.author);
             }
         }///////
 
@@ -98,7 +110,7 @@ HashMap<String, String> hashMap;
         @Override
         public recycleAdapter.recyleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-            LinearLayout quotesItem;
+
             LayoutInflater inflater = getLayoutInflater();
             View quoteView =inflater.inflate(R.layout.quotes_item, parent, false);
 
@@ -107,12 +119,13 @@ HashMap<String, String> hashMap;
                 @Override
                 public void onClick(View v) {
 
-
                     String quote = hashMap.get("quote");
                     String author = hashMap.get("author");
 
                     Single_quotes.quoteTitles = quote;
-                    Single_quotes.quoteAuthores = author;
+                    Single_quotes.quoteAuthors = author;
+
+
                     startActivity(new Intent(getActivity(), Single_quotes.class));
                 }
             });
@@ -130,8 +143,9 @@ HashMap<String, String> hashMap;
 
 
 
+
             holder.quote.setText(quote);
-            holder.authore.setText(" - " + author);
+            holder.author.setText("- " + author);
             holder.category.setText("Category: " + category);
         }
 
@@ -140,6 +154,9 @@ HashMap<String, String> hashMap;
             return arrayList.size();
         }
     }/////////////////////
+
+
+
 
 
 

@@ -13,7 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class AddQuote extends AppCompatActivity {
 
-    EditText inputQuote, inputAuthor, inputCategory;
+    EditText inputQuote, inputAuthor, inputCategory, inputImage;
     Button submit;
     DatabaseHelper dbHelper;
 
@@ -26,6 +26,7 @@ public class AddQuote extends AppCompatActivity {
         inputQuote = findViewById(R.id.inputQuote);
         inputAuthor = findViewById(R.id.inputAuthor);
         inputCategory = findViewById(R.id.inputCategory);
+        inputImage = findViewById(R.id.inputImage);
         submit=findViewById(R.id.submit);
 
         dbHelper=new DatabaseHelper(this);
@@ -36,6 +37,7 @@ public class AddQuote extends AppCompatActivity {
                 String quotes = String.valueOf(inputQuote.getText());
                 String authors = inputAuthor.getText().toString();
                 String categorys = inputCategory.getText().toString();
+                String image = inputImage.getText().toString();
 
                 if(quotes.length() <= 0) {
                     Toast.makeText(getApplicationContext(), "Enter quotes", Toast.LENGTH_LONG).show();
@@ -45,7 +47,7 @@ public class AddQuote extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Enter category", Toast.LENGTH_LONG).show();
                 }else {
 
-                    dbHelper.addQuotes(quotes, authors, categorys);
+                    dbHelper.addQuotes(quotes, authors, categorys, image);
                     Toast.makeText(getApplicationContext(), "Quote add successful...", Toast.LENGTH_SHORT).show();
 
                     FragmentManager fragmentManager = getSupportFragmentManager();
