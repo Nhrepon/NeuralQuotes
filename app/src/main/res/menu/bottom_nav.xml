@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/bottomNavBookmark"
+        android:icon="@drawable/heart"
+        android:title="Bookmark"
+        app:showAsAction="ifRoom"
+        android:checkable="true"
+        />
+    <item
+        android:id="@+id/bottomNavSave"
+        android:icon="@drawable/download"
+        android:title="Save"
+        android:checkable="true"
+        android:iconTint="@color/white"
+        />
+    <item
+        android:id="@+id/bottomNavCopy"
+        android:icon="@drawable/bookmark"
+        android:title="Copy"
+        app:showAsAction="ifRoom"
+        android:checkable="true"
+        />
+    <item
+        android:id="@+id/bottomNavShare"
+        android:icon="@drawable/share"
+        android:title="Share"
+        app:showAsAction="ifRoom"
+        android:checkable="true"
+        />
+</menu>

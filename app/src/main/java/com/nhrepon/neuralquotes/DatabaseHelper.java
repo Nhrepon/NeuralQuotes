@@ -58,7 +58,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Get all quotes ////////////////////////////////////////////////////////
     public Cursor getAllQuote(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from quotes", null);
+        Cursor cursor = db.rawQuery("select * from quotes ORDER BY id DESC", null);
 
         return cursor;
 

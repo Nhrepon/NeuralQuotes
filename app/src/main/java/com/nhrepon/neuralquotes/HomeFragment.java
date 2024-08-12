@@ -85,11 +85,12 @@ HashMap<String, String> hashMap;
     //////////////////////////////////////////////////////////////////
     private class recycleAdapter extends RecyclerView.Adapter<recycleAdapter.recyleViewHolder>{
 
-        LinearLayout quotesItem;
+
 
         // manual create
         private class recyleViewHolder extends RecyclerView.ViewHolder{
 
+            LinearLayout quotesItem;
             TextView category, quote, author;
 
 
@@ -114,21 +115,7 @@ HashMap<String, String> hashMap;
             LayoutInflater inflater = getLayoutInflater();
             View quoteView =inflater.inflate(R.layout.quotes_item, parent, false);
 
-            quotesItem = quoteView.findViewById(R.id.quotesItem);
-            quotesItem.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
 
-                    String quote = hashMap.get("quote");
-                    String author = hashMap.get("author");
-
-                    Single_quotes.quoteTitles = quote;
-                    Single_quotes.quoteAuthors = author;
-
-
-                    startActivity(new Intent(getActivity(), Single_quotes.class));
-                }
-            });
             return new recyleViewHolder(quoteView);
         }
 
@@ -140,6 +127,7 @@ HashMap<String, String> hashMap;
             String quote = hashMap.get("quote");
             String author = hashMap.get("author");
             String category = hashMap.get("category");
+            String image = hashMap.get("image");
 
 
 
@@ -147,6 +135,19 @@ HashMap<String, String> hashMap;
             holder.quote.setText(quote);
             holder.author.setText("- " + author);
             holder.category.setText("Category: " + category);
+
+            holder.quotesItem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Single_quotes.quoteTitles = quote;
+                    Single_quotes.quoteAuthors = author;
+                    Single_quotes.quoteImage = image;
+
+
+                    startActivity(new Intent(getActivity(), Single_quotes.class));
+                }
+            });
         }
 
         @Override

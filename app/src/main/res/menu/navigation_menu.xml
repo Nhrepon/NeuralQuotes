@@ -41,7 +41,7 @@
 
         <item
             android:id="@+id/addQuote"
-            android:icon="@drawable/bookmark"
+            android:icon="@drawable/add"
             android:title="Add quote"
             android:checkable="true"
             />
